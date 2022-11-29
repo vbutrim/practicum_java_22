@@ -64,14 +64,14 @@ public class CommandLineManager {
         return new Student(studentName, mathMark, russianLanguageMark, informaticsMark);
     }
 
-    private void printAverageMarks() {
+    public void printAverageMarks() {
         for (int i = 0; i < journal.studentsCount; i++) {
             Student nextStudent = journal.students[i];
             System.out.println(nextStudent.name + ": " + nextStudent.getAverageMark());
         }
     }
 
-    private void printExcellentStudentsCount() {
+    public void printExcellentStudentsCount() {
         System.out.println("Количество отличников " + journal.getExcellentStudentsCount());
     }
 }
