@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * @author butrim
  */
@@ -37,7 +39,7 @@ public class SingleTask extends Task {
     }
 
     public static class ToCreate {
-        private String name;
+        private final String name;
 
         public ToCreate(String name) {
             this.name = name;
