@@ -8,7 +8,7 @@ public abstract class Managers {
 
     public static HistoryManager getHistoryManager() {
         if (historyManager == null) {
-            historyManager = new InMemoryHistoryManager();
+            historyManager = new HistoryManager.InMemoryArrayList();
         }
         return historyManager;
     }

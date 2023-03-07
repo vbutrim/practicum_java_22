@@ -5,7 +5,7 @@ import java.util.List;
  */
 public class TestHistoryManager {
     public static void main(String[] args) {
-        InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
+        HistoryManager.InMemoryArrayList historyManager = new HistoryManager.InMemoryArrayList();
 
         historyManager.addTask(1);
 
