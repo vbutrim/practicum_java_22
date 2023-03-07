@@ -3,11 +3,20 @@
  */
 public abstract class Managers {
 
+    private static HistoryManager historyManager;
+    private static TaskManager taskManager;
+
     public static HistoryManager getHistoryManager() {
-        return new InMemoryHistoryManager();
+        if (historyManager == null) {
+            historyManager = new InMemoryHistoryManager();
+        }
+        return historyManager;
     }
 
     public static TaskManager getTaskManager() {
-        return new InMemoryTaskManager(getHistoryManager());
+        if (taskManager == null) {
+            taskManager = new InMemoryTaskManager(getHistoryManager());
+        }
+        return taskManager;
     }
 }
