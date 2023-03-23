@@ -39,6 +39,6 @@ public class TestMain {
         // Then: проверка результата
         List<Integer> result = historyManager.getHistoryIds();
 
-        assert (result.contains(2));
+        assert result.contains(2);
     }
 }
