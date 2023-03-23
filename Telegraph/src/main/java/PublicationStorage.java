@@ -72,7 +72,7 @@ public interface PublicationStorage {
 
         private void savePublicationsToFile(BufferedWriter writer) throws IOException {
             // 1: dump header
-            writer.write("id,title,text,sourceUrl");
+            writer.write(Publication.Dto.HEADER);
             writer.write(System.lineSeparator());
 
             // 2: for each publication, dump it to the writer

@@ -55,6 +55,7 @@ public abstract class Publication {
      * этот объектом является отображение строки в файле на публикацию любого типа
      */
     public static final class Dto {
+        public static final String HEADER = "id,title,text,sourceUrl";
         private final int id;
         private final String title;
         private final String text; // not null for articles
