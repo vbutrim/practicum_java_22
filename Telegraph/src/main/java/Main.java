@@ -13,7 +13,7 @@ public class Main {
     }
 
     private static void init(PublicationStorage publicationStorage) {
-        publicationStorage.save(
+        publicationStorage.add(
                 new Publication.Article(
                         1,
                         "article#1",
@@ -21,7 +21,7 @@ public class Main {
                 )
         );
 
-        publicationStorage.save(
+        publicationStorage.add(
                 new Publication.Video(
                         2,
                         "video#1",
@@ -29,7 +29,7 @@ public class Main {
                 )
         );
 
-        publicationStorage.save(
+        publicationStorage.add(
                 new Publication.Video(
                         3,
                         "video#2",

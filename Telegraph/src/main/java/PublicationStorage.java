@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public interface PublicationStorage {
 
-    void save(Publication publication);
+    void add(Publication publication);
 
     Publication getOrThrow(int id);
 
@@ -29,7 +29,7 @@ public interface PublicationStorage {
         }
 
         @Override
-        public void save(Publication publication) {
+        public void add(Publication publication) {
             publications.put(publication.getId(), publication);
         }
 
@@ -51,8 +51,8 @@ public interface PublicationStorage {
         }
 
         @Override
-        public void save(Publication publication) {
-            super.save(publication);
+        public void add(Publication publication) {
+            super.add(publication);
             save();
         }
 
