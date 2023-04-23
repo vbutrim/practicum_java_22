@@ -1,21 +1,33 @@
+package telegraph.publication;
+
+import java.time.LocalDateTime;
+
 /**
  * @author butrim
  */
 public abstract class Publication {
     private final int id;
     private final String title;
+    private final LocalDateTime addTime;
 
-    public Publication(int id, String title) {
+    public Publication(int id, String title, LocalDateTime addTime) {
         this.id = id;
         this.title = title;
+        this.addTime = addTime;
     }
 
     public int getId() {
         return id;
     }
 
+    public abstract PublicationType getType();
+
     public String getTitle() {
         return title;
+    }
+
+    public LocalDateTime getAddTime() {
+        return addTime;
     }
 
     /**
@@ -28,26 +40,36 @@ public abstract class Publication {
     public static class Article extends Publication {
         private final String text;
 
-        public Article(int id, String title, String text) {
-            super(id, title);
+        public Article(int id, String title, String text, LocalDateTime addTime) {
+            super(id, title, addTime);
             this.text = text;
         }
 
         public String getText() {
             return text;
         }
+
+        @Override
+        public PublicationType getType() {
+            return PublicationType.ARTICLE;
+        }
     }
 
     public static class Video extends Publication {
         private final String sourceUrl;
 
-        public Video(int id, String title, String sourceUrl) {
-            super(id, title);
+        public Video(int id, String title, String sourceUrl, LocalDateTime addTime) {
+            super(id, title, addTime);
             this.sourceUrl = sourceUrl;
         }
 
         public String getSourceUrl() {
             return sourceUrl;
+        }
+
+        @Override
+        public PublicationType getType() {
+            return PublicationType.VIDEO;
         }
     }
 

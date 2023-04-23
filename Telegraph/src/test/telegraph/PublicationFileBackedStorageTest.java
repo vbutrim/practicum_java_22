@@ -1,11 +1,16 @@
+package telegraph;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import telegraph.publication.Publication;
+import telegraph.publication.PublicationStorage;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class PublicationFileBackedStorageTest extends PublicationStorageTest<PublicationStorage.FileBacked> {
@@ -33,7 +38,8 @@ public class PublicationFileBackedStorageTest extends PublicationStorageTest<Pub
                 new Publication.Article(
                         1,
                         "article",
-                        "content"
+                        "content",
+                        LocalDateTime.of(2022, 1, 1, 0, 0)
                 )
         );
 

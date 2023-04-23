@@ -1,5 +1,11 @@
+package telegraph;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import telegraph.publication.Publication;
+import telegraph.publication.PublicationStorage;
+
+import java.time.LocalDateTime;
 
 // abstract class TaskManagerTest<T extends TaskManager>
 public abstract class PublicationStorageTest<TPublicationStorage extends PublicationStorage> {
@@ -11,7 +17,8 @@ public abstract class PublicationStorageTest<TPublicationStorage extends Publica
         Publication.Article article = new Publication.Article(
                 1,
                 "article",
-                "content"
+                "content",
+                LocalDateTime.of(2022, 1, 1, 0, 0)
         );
 
         // When
