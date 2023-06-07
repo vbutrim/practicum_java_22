@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER NOT NULL PRIMARY KEY auto_increment,
+    email VARCHAR(255) NOT NULL,
+    login VARCHAR(255) NOT NULL,
+    CONSTRAINT user_pk PRIMARY KEY (id)
+);
